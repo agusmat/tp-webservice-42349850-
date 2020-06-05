@@ -1,0 +1,105 @@
+<main>
+    <form>
+      <hr id="hr2" />
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Seleccionar pais</label>
+        <select class="form-control"
+        name="pais"
+        id="pais"
+        #country>
+          <option value="argentina">Argentina</option>
+          <option value="spain">España</option>
+          <option value="italy">Italia</option>
+          <option value="usa">EEUU</option>
+          <option value="germany">Alemania</option>
+        </select>
+      </div>
+      <div class="form-check">
+        <input
+          type="checkbox"
+          class="form-check-input"
+          id="casosConf"
+          (change)="changeCasos()"
+        />
+        <label class="form-check-label" for="casosConf"
+          >Casos confirmados</label
+        >
+      </div>
+      <div class="form-check">
+        <input
+          type="checkbox"
+          class="form-check-input"
+          id="curado"
+          (change)="changeRecuperados()"
+        />
+        <label class="form-check-label" for="curado"
+          >Curados</label
+        >
+      </div>
+      <div class="form-check">
+        <input
+          type="checkbox"
+          class="form-check-input"
+          id="fallecido"
+          (change)="change()"
+        />
+        <label class="form-check-label" for="fallecido"
+          >Fallecidos</label
+        >
+      </div>
+      <hr />
+      <button type="submit" class="btn btn-secondary btn-lg btn-block" style="margin-bottom: 15px;"
+      (click)="consulta(country)">
+        Buscar
+      </button>
+      <hr>
+      <button type="submit" class="btn btn-secondary btn-lg btn-block" style="margin-bottom: 15px;"
+      (click)="ngOnInit()">
+        Mostrar todo
+      </button>
+    </form>
+    <hr />
+    <h1>Estadisticas</h1>
+    <div *ngIf="filtrado == false" class="col-md-8 col-sm-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Ubicacion</th>
+          <th scope="col">Casos confirmados</th>
+          <th scope="col">Nuevos casos</th>
+          <th scope="col">Curados</th>
+          <th scope="col">Fallecidos</th>
+        </tr>
+      </thead>
+        <tbody>
+          <tr *ngFor="let item of paises">
+            <td>{{ item.Country_text }}</td>
+            <td>{{ item["Total Cases_text"] }}</td>
+            <td>{{ item["New Cases_text"] }}</td>
+            <td>{{ item["Total Recovered_text"] }}</td>
+            <td>{{ item["Total Deaths_text"] }}</td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+    <div *ngIf="filtrado" class="col-md-8 col-sm-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Ubicacion</th>
+          <th scope="col" *ngIf="filtradoc">Casos confirmados</th>
+          <th scope="col" *ngIf="filtradoc">Nuevos casos</th>
+          <th scope="col" *ngIf="filtrador">Curados</th>
+          <th scope="col" *ngIf="filtradof">Fallecidos</th>
+        </tr>
+      </thead>
+        <tbody>
+            <td>{{ a.Country_text }}</td>
+            <td *ngIf="filtradoc">{{ a["Total Cases_text"] }}</td>
+            <td *ngIf="filtradoc">{{ a["New Cases_text"] }}</td>
+            <td *ngIf="filtrador">{{ a["Total Recovered_text"] }}</td>
+            <td *ngIf="filtradof">{{ a["Total Deaths_text"] }}</td>
+        </tbody>
+    </table>
+  </div>
+  </main>

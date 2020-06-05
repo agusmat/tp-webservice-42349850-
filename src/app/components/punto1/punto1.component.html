@@ -1,0 +1,26 @@
+    <main>
+      <div>
+        <h2>Ultimas Noticias</h2>
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row col-md-12" *ngFor="let item of noticias">
+              <div
+                class="card col-md-10"
+                style="width: 18rem; border-color: white;"
+              >
+                <img src="{{item.img}}" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h6>
+                    <span class="badge badge-danger">{{item.tit}}</span>
+                  </h6>
+                  <b class="card-title">{{item.des}}</b>
+                </div>
+              </div>
+              </div>
+              </div>
+              <aside class="col-md-3">
+                <img src="../../../assets/img/publi.jpg" class="card-img-top img-asid" alt="..." />
+              </aside>
+            </div>
+          </div>
+    </main>

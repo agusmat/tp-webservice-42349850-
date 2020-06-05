@@ -1,0 +1,114 @@
+<main>
+    <div class="row">
+      <div class="col-md-8 d-none d-md-block">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">
+                USD <br /><img src="../../../assets/img/eeuu.jpg" alt="" id="bnd_usa" />
+              </th>
+              <th scope="col">
+                EUR <br /><img src="../../../assets/img/europa.jpg" alt="" id="bnd_usa" />
+              </th>
+              <th scope="col">
+                ARS <br /><img src="../../../assets/img/argentina.jpg" alt="" id="bnd_usa" />
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="2">
+                1 USD <br /><img src="../../../assets/img/eeuu.jpg" alt="" id="bnd_usa" /> <br />
+                Inverse
+              </td>
+              <td>1.00</td>
+              <td>0.98</td>
+              <td>64.87</td>
+            </tr>
+            <tr>
+              <td>1.00</td>
+              <td>1.01</td>
+              <td>0.01</td>
+            </tr>
+            <tr>
+              <td rowspan="2">
+                1 EUR <br /><img src="../../../assets/img/europa.jpg" alt="" id="bnd_usa" /><br />
+                Inverse
+              </td>
+              <td>1.01</td>
+              <td>1.00</td>
+              <td>70.52</td>
+            </tr>
+            <tr>
+              <td>0.98</td>
+              <td>1.00</td>
+              <td>0.01</td>
+            </tr>
+            <tr>
+              <td rowspan="2">
+                1 ARS <br /><img
+                  src="../../../assets/img/argentina.jpg"
+                  alt=""
+                  id="bnd_usa"
+                /><br />
+                Inverse
+              </td>
+              <td>0.01</td>
+              <td>0.01</td>
+              <td>1.00</td>
+            </tr>
+            <tr>
+              <td>64.87</td>
+              <td>70.52</td>
+              <td>1.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <form id="form1">
+          <h2>Conversor de divisas</h2>
+          <hr id="hr2" />
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Cantidad</label>
+            <input
+                #amount
+              type="number"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Ingrese una cantidad"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Convertir de</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="from" [(ngModel)]="from">
+                <option value="USD">USD</option>
+                <option value="ARS">ARS</option>
+                <option value="EUR">EUR</option>
+                <option value="CAD">CAD</option>
+                <option value="CLP">CLP</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">A</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="to" [(ngModel)]="to">
+              <option value="USD">USD</option>
+              <option value="ARS">ARS</option>
+              <option value="EUR">EUR</option>
+              <option value="CAD">CAD</option>
+                <option value="CLP">CLP</option>
+            </select>
+          </div>
+          <label for="exampleFormControlInput1">Resultado</label>
+          <div class="form-group">
+            <h1>{{a.result}}</h1>
+        </div>
+          <button type="submit" class="btn btn-success btn-lg btn-block" (click)="convertirdivisa(from,to,amount)">
+            Calcular
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
