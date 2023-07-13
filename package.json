@@ -21,7 +21,7 @@
     "@angular/router": "~9.1.9",
     "angular-9-datatable": "^0.1.1",
     "bootstrap": "^4.5.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ngx-bootstrap": "^5.6.1",
     "popper.js": "^1.16.1",
     "rxjs": "~6.5.4",
